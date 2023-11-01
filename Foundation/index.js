@@ -50,13 +50,13 @@ const userData = {
 console.log(findUser(userData));
 
 // hidden classes
-function Animal(x,y) {
+function Animal(x, y) {
   this.x = x;
   this.y = y;
 }
 
-const obj1 = new Animal(1,2);
-const obj2 = new Animal(3,4);
+const obj1 = new Animal(1, 2);
+const obj2 = new Animal(3, 4);
 
 obj1.a = 30;
 obj1.b = 100;
@@ -69,3 +69,5 @@ obj2.a = 100;
   as soon as you start introducing things in different orders, it will run slowly
   add objects in the constructor
 */
+
+// we will talk about call stack and memory heaps next
