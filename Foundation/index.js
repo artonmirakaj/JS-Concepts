@@ -21,4 +21,6 @@ console.log(jsengine('var a = 5'));
   JIT Compiler (Just In Time)
   - combines interpreter and compiler
   - is faster and optimizes code
+
+  this is a new feature
 */
