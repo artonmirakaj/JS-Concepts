@@ -94,18 +94,24 @@ obj2.a = 100;
   - caching or DB storage
   - asynchronous - do something in the background and return data once done
 
-  i.e. open window on the browser, this is what the web browser API provides, they're not native to JS
+  i.e. open 'window' on the browser, this is what the web browser API provides, they're not native to JS
   
   Event Loop
   - is the call stack empty
   - only runs once the call stack is empty, has the entire file been run
 
   Callback Queue
-
-
 */
 
 
 console.log('1');
 setTimeout(() => {console.log('2'), 1000});
 console.log('3');
+
+
+/*
+  Node is a runtime, uses JS outside of the browser, but async
+
+  global = api (runtime)
+  window = api (browser)
+*/
