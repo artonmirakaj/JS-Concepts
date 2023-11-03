@@ -46,20 +46,25 @@ FILO
   - i.e. Recursion
 
   you get maxium call stack size exceeded
-
 */
 
 // garbage collection
 // JS frees up memory, on the heap to prevent leaks, we dont use and collects the garbage
 
-// memory leaks
+// memory leaks - pieces of memory that the application have used in the past, but is not needed
+// any longer, but has not yet returned back to us, to the pool of free memory
 /*
-  global variables
+  1. global variables
   var a = 1;
   var b = 2;
   var c = 3
 
-  event listeners
+  2. event listeners
   var.element = document.getElementById('button');
   element.addEventListener('click', onClick)
+
+  3. setInterval
+  setInterval(() => {
+    // referencing objects...
+  })
 */
