@@ -71,3 +71,41 @@ obj2.a = 100;
 */
 
 // we will talk about call stack and memory heaps next
+
+
+/*
+  JS is a single threaded programming language
+
+  - means that only one set of instructions is executed at a time
+  - it has only 1 call stack - allows us to run code one at a time
+  - synchronous (1 at a time, in order that it appears, only one thing can happen at a time)
+*/
+
+/*
+  JS Runtime
+
+  JS engine (call stack & memory heap)
+
+  Web API (DOM, fetch(), setTimeout())
+  - comes with the browser
+  - sends HTTP requests
+  - listen to DOM events, click events
+  - delay execution
+  - caching or DB storage
+  - asynchronous - do something in the background and return data once done
+
+  i.e. open window on the browser, this is what the web browser API provides, they're not native to JS
+  
+  Event Loop
+  - is the call stack empty
+  - only runs once the call stack is empty, has the entire file been run
+
+  Callback Queue
+
+
+*/
+
+
+console.log('1');
+setTimeout(() => {console.log('2'), 1000});
+console.log('3');
