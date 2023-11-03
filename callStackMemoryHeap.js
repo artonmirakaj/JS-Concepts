@@ -36,5 +36,30 @@ calculate();
 
 /*
 calculate()
-call stack
+anonymous
+FILO
+*/
+
+/* 
+  call stack
+  - when we keep calling functions nested inside of each other over and over 
+  - i.e. Recursion
+
+  you get maxium call stack size exceeded
+
+*/
+
+// garbage collection
+// JS frees up memory, on the heap to prevent leaks, we dont use and collects the garbage
+
+// memory leaks
+/*
+  global variables
+  var a = 1;
+  var b = 2;
+  var c = 3
+
+  event listeners
+  var.element = document.getElementById('button');
+  element.addEventListener('click', onClick)
 */
