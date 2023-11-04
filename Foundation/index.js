@@ -1,10 +1,3 @@
-// javascript engine - runs JS code in the browser
-function jsengine(code) {
-  return code.split(/\s+/)
-}
-
-// console.log(jsengine('var a = 5'));
-
 /*
   Interpreters vs Compilers
 
@@ -38,39 +31,14 @@ function jsengine(code) {
   code that executes the same method repeatedly, called multiple times
   it will cache that and not re-run it again
 */
-function findUser(user) {
-  return `found ${user.firstName} ${user.lastName}`
-}
 
-const userData = {
-  firstName: 'Arton',
-  lastName: 'Mirakaj'
-}
-
-console.log(findUser(userData));
 
 // hidden classes
-function Animal(x, y) {
-  this.x = x;
-  this.y = y;
-}
-
-const obj1 = new Animal(1, 2);
-const obj2 = new Animal(3, 4);
-
-obj1.a = 30;
-obj1.b = 100;
-
-obj2.b = 30;
-obj2.a = 100;
-
 /*
   you want to try and instantiate your object properties in the same order so that hidden classes
   as soon as you start introducing things in different orders, it will run slowly
   add objects in the constructor
 */
-
-// we will talk about call stack and memory heaps next
 
 
 /*
@@ -103,15 +71,75 @@ obj2.a = 100;
   Callback Queue
 */
 
-
-console.log('1');
-setTimeout(() => {console.log('2'), 1000});
-console.log('3');
-
-
 /*
   Node is a runtime, uses JS outside of the browser, but async
 
   global = api (runtime)
   window = api (browser)
+*/
+
+/*
+  JS Engine
+  - reading and executing code
+
+  1. we need a place to store and write information
+
+  memory heap
+  - a place to store info
+  - allocate memory, use memory, and release memory
+  - objects, complex data structures, arrays, functions are stored here
+
+  call stack - first in, last out (FILO)
+  - place to keep track of where we are in the code so that we can run the code in order
+  - stores functions and variables as your code executes
+  - variables are stored here
+*/
+
+// call stack
+function subtractTwo(num) {
+  return num - 2;
+}
+
+function calculate() {
+  const sumTotal = 4 + 5;
+  return subtractTwo(sumTotal);
+}
+
+calculate();
+
+/*
+7
+9 - 2
+subtractTwo()
+calculate()
+anonymous
+*/
+
+/*
+  call stack
+  - when we keep calling functions nested inside of each other over and over
+  - i.e. Recursion
+
+  you get maxium call stack size exceeded
+*/
+
+// garbage collection
+// JS frees up memory, on the heap to prevent leaks, we dont use and collects the garbage
+
+// memory leaks - pieces of memory that the application have used in the past, but is not needed
+// any longer, but has not yet returned back to us, to the pool of free memory
+/*
+  1. global variables
+  var a = 1;
+  var b = 2;
+  var c = 3
+
+  2. event listeners
+  var.element = document.getElementById('button');
+  element.addEventListener('click', onClick)
+
+  3. setInterval
+  setInterval(() => {
+    // referencing objects...
+  })
 */
